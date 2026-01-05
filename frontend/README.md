@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+# Wishio Landing Page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, translucent glassmorphism landing page for the Wishio mobile app.
 
-## Available Scripts
+## Configuration
 
-In the project directory, you can run:
+Edit `/src/config/siteConfig.js` to customize:
 
-### `npm start`
+- **App Store URLs**: Replace placeholder URLs with your actual store links
+- **Contact Email**: Update with your support email
+- **Social Links**: Add your social media profiles (optional)
+- **Company Name**: Update copyright information
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Screenshots
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Place your app screenshots in `/public/screenshots/`:
 
-### `npm test`
+- `phone-mockup.png` - Hero section phone display
+- `home.png` - Home screen screenshot
+- `calendar.png` - Calendar view screenshot  
+- `greeting.png` - Greeting generator screenshot
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech Stack
 
-### `npm run build`
+- React 19
+- Tailwind CSS 3
+- Framer Motion (animations)
+- qrcode.react (QR code generation)
+- Lucide React (icons)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Development
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+# Install dependencies
+yarn install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Start development server
+yarn start
 
-### `npm run eject`
+# Build for production
+yarn build
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Deployment
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Netlify
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Drag & Drop**: Build locally with `yarn build`, then drag the `build` folder to Netlify
+2. **Git Integration**:
+   - Connect your repository
+   - Build command: `yarn build`
+   - Publish directory: `build`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Vercel
 
-## Learn More
+1. Import your repository
+2. Framework Preset: Create React App
+3. Build command: `yarn build`
+4. Output directory: `build`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### GitHub Pages
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Add to `package.json`:
+   ```json
+   "homepage": "https://yourusername.github.io/wishio-site"
+   ```
 
-### Code Splitting
+2. Install gh-pages:
+   ```bash
+   yarn add -D gh-pages
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. Add deploy scripts to `package.json`:
+   ```json
+   "predeploy": "yarn build",
+   "deploy": "gh-pages -d build"
+   ```
 
-### Analyzing the Bundle Size
+4. Deploy:
+   ```bash
+   yarn deploy
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Customization
 
-### Making a Progressive Web App
+### Colors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The site uses a rose/pink color palette. To change colors, edit:
+- `tailwind.config.js` for theme colors
+- `src/index.css` for CSS variables
 
-### Advanced Configuration
+### Fonts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The site uses Inter font. To change, update the Google Fonts import in `src/index.css`.
 
-### Deployment
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+© 2025 Interware SAS
