@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: 20
           cache: yarn
-          cache-dependency-path: frontend/yarn.lock
+          cache-dependency-path: yarn.lock
 
       - name: Install
         working-directory: frontend
@@ -37,7 +37,6 @@ jobs:
         working-directory: frontend
         run: yarn build
 
-      # Opcional pero recomendado para SPAs con React Router:
       - name: Add SPA fallback
         run: cp frontend/build/index.html frontend/build/404.html
 
