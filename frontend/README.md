@@ -1,6 +1,20 @@
 # Wishio Landing Page
 
-A modern, translucent glassmorphism landing page for the Wishio mobile app.
+A modern, translucent glassmorphism landing page for the Wishio mobile app with automatic multi-language support.
+
+## Features
+
+- 🌍 **16 Languages** - Automatic browser language detection
+- 📱 **Responsive** - Mobile-first design
+- ✨ **Glassmorphism** - Modern translucent UI
+- 🔲 **QR Codes** - Dynamic QR code generation
+- ⚡ **Fast** - Static React site, no backend
+
+## Supported Languages
+
+English, Spanish, Portuguese, French, German, Italian, Chinese (Simplified), Japanese, Korean, Arabic, Hindi, Russian, Turkish, Dutch, Polish, Indonesian
+
+The site automatically detects the user's browser language and displays content accordingly. No language switcher needed.
 
 ## Configuration
 
@@ -10,6 +24,7 @@ Edit `/src/config/siteConfig.js` to customize:
 - **Contact Email**: Update with your support email
 - **Social Links**: Add your social media profiles (optional)
 - **Company Name**: Update copyright information
+- **Company Website**: Link to interware.dev or your company site
 
 ## Screenshots
 
