@@ -4,8 +4,11 @@ import { QRCodeSVG } from 'qrcode.react';
 import { Apple, Play } from 'lucide-react';
 import { Button } from '../ui/button';
 import { siteConfig } from '../../config/siteConfig';
+import { useLanguage } from '../../i18n/LanguageContext';
 
 const Hero = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Effects */}
@@ -33,18 +36,18 @@ const Hero = () => {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 backdrop-blur-sm border border-rose-100 text-rose-600 text-sm font-medium mb-6 shadow-sm"
             >
               <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
-              {siteConfig.tagline}
+              {t.tagline}
             </motion.div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-800 leading-tight mb-6">
-              Birthday reminders that feel{' '}
+              {t.heroTitle}{' '}
               <span className="bg-gradient-to-r from-rose-500 to-pink-500 bg-clip-text text-transparent">
-                effortless.
+                {t.heroTitleHighlight}
               </span>
             </h1>
 
             <p className="text-lg sm:text-xl text-slate-600 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              Import contacts, track birthdays and important dates, and generate greetings in seconds.
+              {t.heroSubtitle}
             </p>
 
             {/* Store Buttons */}
@@ -59,8 +62,8 @@ const Hero = () => {
                 <Button className="w-full sm:w-auto h-14 px-6 bg-slate-900 hover:bg-slate-800 text-white rounded-2xl flex items-center gap-3 shadow-lg shadow-slate-900/20">
                   <Apple className="w-7 h-7" />
                   <div className="text-left">
-                    <div className="text-xs opacity-80">Download on the</div>
-                    <div className="text-base font-semibold -mt-0.5">App Store</div>
+                    <div className="text-xs opacity-80">{t.downloadIOS}</div>
+                    <div className="text-base font-semibold -mt-0.5">{t.appStore}</div>
                   </div>
                 </Button>
               </motion.a>
@@ -75,8 +78,8 @@ const Hero = () => {
                 <Button className="w-full sm:w-auto h-14 px-6 bg-slate-900 hover:bg-slate-800 text-white rounded-2xl flex items-center gap-3 shadow-lg shadow-slate-900/20">
                   <Play className="w-6 h-6 fill-current" />
                   <div className="text-left">
-                    <div className="text-xs opacity-80">Get it on</div>
-                    <div className="text-base font-semibold -mt-0.5">Google Play</div>
+                    <div className="text-xs opacity-80">{t.getItOn}</div>
+                    <div className="text-base font-semibold -mt-0.5">{t.googlePlay}</div>
                   </div>
                 </Button>
               </motion.a>
@@ -99,7 +102,7 @@ const Hero = () => {
                     bgColor="transparent"
                   />
                 </div>
-                <span className="text-xs text-slate-500 mt-2 font-medium">iOS</span>
+                <span className="text-xs text-slate-500 mt-2 font-medium">{t.ios}</span>
               </div>
               <div className="flex flex-col items-center">
                 <div className="p-3 bg-white rounded-2xl shadow-lg shadow-slate-200/50 backdrop-blur-sm border border-white/50">
@@ -111,7 +114,7 @@ const Hero = () => {
                     bgColor="transparent"
                   />
                 </div>
-                <span className="text-xs text-slate-500 mt-2 font-medium">Android</span>
+                <span className="text-xs text-slate-500 mt-2 font-medium">{t.android}</span>
               </div>
             </motion.div>
           </motion.div>
@@ -148,8 +151,8 @@ const Hero = () => {
                             <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-rose-400 to-pink-500 flex items-center justify-center mb-4 shadow-lg">
                               <span class="text-white text-3xl font-bold">W</span>
                             </div>
-                            <p class="text-slate-400 text-sm">App Preview</p>
-                            <p class="text-slate-300 text-xs mt-1">Place screenshot in /public/screenshots/</p>
+                            <p class="text-slate-400 text-sm">${t.appPreview}</p>
+                            <p class="text-slate-300 text-xs mt-1">${t.placeScreenshot}</p>
                           </div>
                         `;
                       }}

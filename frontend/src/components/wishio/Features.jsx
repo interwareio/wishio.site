@@ -8,47 +8,50 @@ import {
   Trash2,
   CloudUpload,
 } from 'lucide-react';
-
-const features = [
-  {
-    icon: Shield,
-    title: 'Local-first & Private',
-    description: 'Your events stay on your device. No cloud, no tracking, just your data.',
-    gradient: 'from-emerald-400 to-teal-500',
-  },
-  {
-    icon: Users,
-    title: 'Import Contacts',
-    description: 'Pull in birthdays from your contacts with photos automatically.',
-    gradient: 'from-blue-400 to-indigo-500',
-  },
-  {
-    icon: Calendar,
-    title: 'Multiple Event Types',
-    description: 'Birthdays, anniversaries, custom events — track what matters to you.',
-    gradient: 'from-violet-400 to-purple-500',
-  },
-  {
-    icon: MessageSquareHeart,
-    title: 'Smart Greeting Generator',
-    description: 'Generate personalized greetings based on relationship: family, friend, partner, coworker.',
-    gradient: 'from-rose-400 to-pink-500',
-  },
-  {
-    icon: Trash2,
-    title: 'Quick Edit & Delete',
-    description: 'Swipe gestures make managing your events fast and intuitive.',
-    gradient: 'from-amber-400 to-orange-500',
-  },
-  {
-    icon: CloudUpload,
-    title: 'Calendar Sync',
-    description: 'Optionally save events to iCloud or Google Calendar for native reminders.',
-    gradient: 'from-cyan-400 to-sky-500',
-  },
-];
+import { useLanguage } from '../../i18n/LanguageContext';
 
 const Features = () => {
+  const { t } = useLanguage();
+  
+  const features = [
+    {
+      icon: Shield,
+      titleKey: 'featureLocalTitle',
+      descKey: 'featureLocalDesc',
+      gradient: 'from-emerald-400 to-teal-500',
+    },
+    {
+      icon: Users,
+      titleKey: 'featureImportTitle',
+      descKey: 'featureImportDesc',
+      gradient: 'from-blue-400 to-indigo-500',
+    },
+    {
+      icon: Calendar,
+      titleKey: 'featureEventsTitle',
+      descKey: 'featureEventsDesc',
+      gradient: 'from-violet-400 to-purple-500',
+    },
+    {
+      icon: MessageSquareHeart,
+      titleKey: 'featureGreetingTitle',
+      descKey: 'featureGreetingDesc',
+      gradient: 'from-rose-400 to-pink-500',
+    },
+    {
+      icon: Trash2,
+      titleKey: 'featureEditTitle',
+      descKey: 'featureEditDesc',
+      gradient: 'from-amber-400 to-orange-500',
+    },
+    {
+      icon: CloudUpload,
+      titleKey: 'featureSyncTitle',
+      descKey: 'featureSyncDesc',
+      gradient: 'from-cyan-400 to-sky-500',
+    },
+  ];
+
   return (
     <section id="features" className="relative py-24 overflow-hidden">
       {/* Background */}
@@ -66,13 +69,13 @@ const Features = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 mb-4">
-            Everything you need to{' '}
+            {t.featuresTitle}{' '}
             <span className="bg-gradient-to-r from-rose-500 to-pink-500 bg-clip-text text-transparent">
-              stay connected
+              {t.featuresTitleHighlight}
             </span>
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Simple, thoughtful features designed to help you celebrate the people you care about.
+            {t.featuresSubtitle}
           </p>
         </motion.div>
 
@@ -80,7 +83,7 @@ const Features = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <motion.div
-              key={feature.title}
+              key={feature.titleKey}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -93,10 +96,10 @@ const Features = () => {
                   <feature.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-slate-800 mb-2">
-                  {feature.title}
+                  {t[feature.titleKey]}
                 </h3>
                 <p className="text-slate-600 leading-relaxed">
-                  {feature.description}
+                  {t[feature.descKey]}
                 </p>
               </div>
             </motion.div>
