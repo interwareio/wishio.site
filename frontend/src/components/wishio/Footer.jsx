@@ -2,14 +2,16 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Mail } from 'lucide-react';
 import { siteConfig } from '../../config/siteConfig';
+import { useLanguage } from '../../i18n/LanguageContext';
 
 const Footer = () => {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
-    { label: 'Privacy Policy', href: siteConfig.privacyPolicyUrl },
-    { label: 'Terms of Service', href: siteConfig.termsUrl },
-    { label: 'Contact', href: `mailto:${siteConfig.contactEmail}` },
+    { label: t.privacyPolicy, href: siteConfig.privacyPolicyUrl },
+    { label: t.termsOfService, href: siteConfig.termsUrl },
+    { label: t.contact, href: `mailto:${siteConfig.contactEmail}` },
   ];
 
   return (
@@ -24,9 +26,9 @@ const Footer = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          {/* Logo */}
-          <div className="flex justify-center mb-8">
-            <div className="flex items-center gap-2">
+          {/* Logo & Company */}
+          <div className="flex flex-col items-center mb-8">
+            <div className="flex items-center gap-2 mb-2">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-400 to-pink-500 flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold text-xl">W</span>
               </div>
@@ -34,6 +36,17 @@ const Footer = () => {
                 {siteConfig.appName}
               </span>
             </div>
+            <p className="text-slate-400 text-sm">
+              {t.by}{' '}
+              <a 
+                href={siteConfig.companyWebsite}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-rose-400 hover:text-rose-300 transition-colors font-medium"
+              >
+                interware.dev
+              </a>
+            </p>
           </div>
 
           {/* Links */}
@@ -107,9 +120,9 @@ const Footer = () => {
 
           {/* Bottom */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-            <p>© {currentYear} {siteConfig.companyName}. All rights reserved.</p>
+            <p>© {currentYear} {siteConfig.companyName}. {t.allRightsReserved}</p>
             <p className="flex items-center gap-1">
-              Made with <Heart className="w-4 h-4 text-rose-500 fill-rose-500" /> for people who care.
+              {t.madeWith} <Heart className="w-4 h-4 text-rose-500 fill-rose-500" /> {t.forPeopleWhoCare}
             </p>
           </div>
         </motion.div>

@@ -3,8 +3,10 @@ import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from '../ui/button';
 import { siteConfig } from '../../config/siteConfig';
+import { useLanguage } from '../../i18n/LanguageContext';
 
 const Navbar = () => {
+  const { t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -25,9 +27,9 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { label: 'Features', id: 'features' },
-    { label: 'Screenshots', id: 'screenshots' },
-    { label: 'Download', id: 'download' },
+    { label: t.features, id: 'features' },
+    { label: t.screenshots, id: 'screenshots' },
+    { label: t.download, id: 'download' },
   ];
 
   return (
@@ -72,7 +74,7 @@ const Navbar = () => {
               onClick={() => scrollToSection('download')}
               className="bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white px-6 rounded-full shadow-lg shadow-rose-500/25 transition-all hover:shadow-rose-500/40"
             >
-              Get the app
+              {t.getTheApp}
             </Button>
           </div>
 
@@ -111,7 +113,7 @@ const Navbar = () => {
                 onClick={() => scrollToSection('download')}
                 className="w-full bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white rounded-full"
               >
-                Get the app
+                {t.getTheApp}
               </Button>
             </div>
           </motion.div>

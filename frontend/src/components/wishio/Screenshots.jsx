@@ -3,8 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '../ui/button';
 import { siteConfig } from '../../config/siteConfig';
+import { useLanguage } from '../../i18n/LanguageContext';
 
 const Screenshots = () => {
+  const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   const screenshots = siteConfig.screenshots;
 
@@ -32,14 +34,14 @@ const Screenshots = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            See{' '}
+            {t.screenshotsTitle}{' '}
             <span className="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">
-              Wishio
+              {t.screenshotsTitleHighlight}
             </span>{' '}
-            in action
+            {t.screenshotsTitleEnd}
           </h2>
           <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-            A clean, intuitive interface designed for quick access to what matters.
+            {t.screenshotsSubtitle}
           </p>
         </motion.div>
 
@@ -75,7 +77,7 @@ const Screenshots = () => {
 
                 return (
                   <motion.div
-                    key={screenshot.caption}
+                    key={screenshot.captionKey}
                     initial={false}
                     animate={{
                       scale: isActive ? 1 : 0.85,
@@ -100,17 +102,19 @@ const Screenshots = () => {
                         <div className="aspect-[9/19] bg-gradient-to-b from-slate-800 to-slate-900">
                           <img
                             src={screenshot.src}
-                            alt={screenshot.caption}
+                            alt={t[screenshot.captionKey]}
                             className="w-full h-full object-cover"
                             onError={(e) => {
                               e.target.style.display = 'none';
+                              const caption = t[screenshot.captionKey];
+                              const desc = t[screenshot.descriptionKey];
                               e.target.parentElement.innerHTML = `
                                 <div class="flex flex-col items-center justify-center h-full p-4 text-center bg-gradient-to-b from-rose-900/30 to-pink-900/30">
                                   <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-3">
                                     <span class="text-2xl">📱</span>
                                   </div>
-                                  <p class="text-white/60 text-sm font-medium">${screenshot.caption}</p>
-                                  <p class="text-white/40 text-xs mt-1">${screenshot.description}</p>
+                                  <p class="text-white/60 text-sm font-medium">${caption}</p>
+                                  <p class="text-white/40 text-xs mt-1">${desc}</p>
                                 </div>
                               `;
                             }}
@@ -140,10 +144,10 @@ const Screenshots = () => {
               className="text-center mt-8"
             >
               <h3 className="text-xl font-semibold text-white mb-1">
-                {screenshots[currentIndex].caption}
+                {t[screenshots[currentIndex].captionKey]}
               </h3>
               <p className="text-slate-400">
-                {screenshots[currentIndex].description}
+                {t[screenshots[currentIndex].descriptionKey]}
               </p>
             </motion.div>
           </AnimatePresence>

@@ -7,7 +7,6 @@
 export const siteConfig = {
   // App Information
   appName: "Wishio",
-  tagline: "Never miss a birthday again.",
   
   // Store URLs (replace with your actual URLs)
   iosAppStoreUrl: "https://apps.apple.com/app/idYOUR_ID_HERE",
@@ -25,6 +24,7 @@ export const siteConfig = {
   
   // Company Information
   companyName: "Interware SAS",
+  companyWebsite: "https://interware.dev",
   
   // Legal Pages (placeholders)
   privacyPolicyUrl: "/privacy",
@@ -35,18 +35,18 @@ export const siteConfig = {
   screenshots: [
     {
       src: "/screenshots/home.png",
-      caption: "Home",
-      description: "List with photos & event type"
+      captionKey: "screenshotHome",
+      descriptionKey: "screenshotHomeDesc"
     },
     {
       src: "/screenshots/calendar.png",
-      caption: "Calendar",
-      description: "Events overview"
+      captionKey: "screenshotCalendar",
+      descriptionKey: "screenshotCalendarDesc"
     },
     {
       src: "/screenshots/greeting.png",
-      caption: "Generate Greeting",
-      description: "Tone & style options"
+      captionKey: "screenshotGreeting",
+      descriptionKey: "screenshotGreetingDesc"
     }
   ],
   
