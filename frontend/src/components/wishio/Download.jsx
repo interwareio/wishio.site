@@ -4,8 +4,11 @@ import { QRCodeSVG } from 'qrcode.react';
 import { Apple, Play, Shield } from 'lucide-react';
 import { Button } from '../ui/button';
 import { siteConfig } from '../../config/siteConfig';
+import { useLanguage } from '../../i18n/LanguageContext';
 
 const Download = () => {
+  const { t } = useLanguage();
+  
   return (
     <section id="download" className="relative py-24 overflow-hidden">
       {/* Background */}
@@ -30,18 +33,18 @@ const Download = () => {
               transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
               className="w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-br from-rose-400 to-pink-500 flex items-center justify-center shadow-xl shadow-rose-500/30"
             >
-              <span className="text-4xl">W</span>
+              <span className="text-4xl text-white font-bold">W</span>
             </motion.div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 mb-4">
-              Ready to remember{' '}
+              {t.downloadTitle}{' '}
               <span className="bg-gradient-to-r from-rose-500 to-pink-500 bg-clip-text text-transparent">
-                every moment?
+                {t.downloadTitleHighlight}
               </span>
             </h2>
 
             <p className="text-lg text-slate-600 mb-8 max-w-xl mx-auto">
-              Available on iOS and Android. Download now and never forget an important date again.
+              {t.downloadSubtitle}
             </p>
 
             {/* Store Buttons */}
@@ -56,8 +59,8 @@ const Download = () => {
                 <Button className="w-full sm:w-auto h-14 px-6 bg-slate-900 hover:bg-slate-800 text-white rounded-2xl flex items-center gap-3 shadow-lg shadow-slate-900/20">
                   <Apple className="w-7 h-7" />
                   <div className="text-left">
-                    <div className="text-xs opacity-80">Download on the</div>
-                    <div className="text-base font-semibold -mt-0.5">App Store</div>
+                    <div className="text-xs opacity-80">{t.downloadIOS}</div>
+                    <div className="text-base font-semibold -mt-0.5">{t.appStore}</div>
                   </div>
                 </Button>
               </motion.a>
@@ -72,8 +75,8 @@ const Download = () => {
                 <Button className="w-full sm:w-auto h-14 px-6 bg-slate-900 hover:bg-slate-800 text-white rounded-2xl flex items-center gap-3 shadow-lg shadow-slate-900/20">
                   <Play className="w-6 h-6 fill-current" />
                   <div className="text-left">
-                    <div className="text-xs opacity-80">Get it on</div>
-                    <div className="text-base font-semibold -mt-0.5">Google Play</div>
+                    <div className="text-xs opacity-80">{t.getItOn}</div>
+                    <div className="text-base font-semibold -mt-0.5">{t.googlePlay}</div>
                   </div>
                 </Button>
               </motion.a>
@@ -91,7 +94,7 @@ const Download = () => {
                     bgColor="transparent"
                   />
                 </div>
-                <span className="text-sm text-slate-500 mt-2 font-medium">Scan for iOS</span>
+                <span className="text-sm text-slate-500 mt-2 font-medium">{t.scanForIOS}</span>
               </div>
               <div className="flex flex-col items-center">
                 <div className="p-4 bg-white rounded-2xl shadow-lg border border-slate-100">
@@ -103,14 +106,14 @@ const Download = () => {
                     bgColor="transparent"
                   />
                 </div>
-                <span className="text-sm text-slate-500 mt-2 font-medium">Scan for Android</span>
+                <span className="text-sm text-slate-500 mt-2 font-medium">{t.scanForAndroid}</span>
               </div>
             </div>
 
             {/* Privacy Note */}
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 rounded-full text-emerald-700 text-sm">
               <Shield className="w-4 h-4" />
-              <span className="font-medium">Wishio is privacy-first: your data stays on your device.</span>
+              <span className="font-medium">{t.privacyNote}</span>
             </div>
           </div>
         </motion.div>
