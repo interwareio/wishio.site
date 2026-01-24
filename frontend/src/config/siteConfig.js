@@ -30,6 +30,12 @@ export const siteConfig = {
   privacyPolicyUrl: "/privacy",
   termsUrl: "/terms",
   
+  // Hero Videos for phone mockup carousel
+  heroVideos: [
+    "https://customer-assets.emergentagent.com/job_8e2fcd51-b262-4f92-820a-d9dccb4a0369/artifacts/swbq6rsw_wishio_birthday_gifts2.mp4",
+    "https://customer-assets.emergentagent.com/job_8e2fcd51-b262-4f92-820a-d9dccb4a0369/artifacts/91vxfna1_wishio_birthday_reminder.mp4",
+  ],
+  
   // Screenshots paths (replace with your actual screenshots)
   // Place screenshots in /public/screenshots/ folder
   screenshots: [
