@@ -30,6 +30,12 @@ export const siteConfig = {
   privacyPolicyUrl: "/privacy",
   termsUrl: "/terms",
   
+  // Hero Videos for phone mockup carousel
+  heroVideos: [
+    "/videos/birthday_gifts.mp4",
+    "/videos/birthday_reminder.mp4",
+  ],
+  
   // Screenshots paths (replace with your actual screenshots)
   // Place screenshots in /public/screenshots/ folder
   screenshots: [

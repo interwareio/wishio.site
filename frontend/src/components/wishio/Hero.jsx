@@ -1,13 +1,53 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { QRCodeSVG } from 'qrcode.react';
-import { Apple, Play } from 'lucide-react';
+import { Apple, Play, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '../ui/button';
 import { siteConfig } from '../../config/siteConfig';
 import { useLanguage } from '../../i18n/LanguageContext';
 
 const Hero = () => {
   const { t } = useLanguage();
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const videoRefs = useRef([]);
+  const videos = siteConfig.heroVideos || [];
+  
+  const nextVideo = () => {
+    setIsVideoLoaded(false);
+    setCurrentVideoIndex((prev) => (prev + 1) % videos.length);
+  };
+  
+  const prevVideo = () => {
+    setIsVideoLoaded(false);
+    setCurrentVideoIndex((prev) => (prev - 1 + videos.length) % videos.length);
+  };
+
+  // Auto-play current video and pause others
+  useEffect(() => {
+    videoRefs.current.forEach((video, index) => {
+      if (video) {
+        if (index === currentVideoIndex) {
+          video.currentTime = 0;
+          const playPromise = video.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(() => {
+              // Auto-play was prevented, show video anyway
+              setIsVideoLoaded(true);
+            });
+          }
+        } else {
+          video.pause();
+        }
+      }
+    });
+  }, [currentVideoIndex]);
+
+  const handleVideoLoaded = (index) => {
+    if (index === currentVideoIndex) {
+      setIsVideoLoaded(true);
+    }
+  };
   
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
@@ -119,7 +159,7 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Phone Mockup */}
+          {/* Phone Mockup with Video Carousel */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -138,25 +178,79 @@ const Hero = () => {
                     <div className="absolute top-0 w-32 h-7 bg-slate-900 rounded-b-3xl" />
                   </div>
                   
-                  {/* Screenshot Placeholder */}
-                  <div className="aspect-[9/18] bg-gradient-to-b from-rose-50 to-pink-50 flex items-center justify-center">
-                    <img
-                      src={siteConfig.phoneMockupImage}
-                      alt="Wishio App Preview"
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                        e.target.parentElement.innerHTML = `
-                          <div class="flex flex-col items-center justify-center h-full p-6 text-center">
-                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-rose-400 to-pink-500 flex items-center justify-center mb-4 shadow-lg">
-                              <span class="text-white text-3xl font-bold">W</span>
+                  {/* Video Carousel */}
+                  <div className="relative aspect-[9/18] bg-slate-900 overflow-hidden">
+                    {videos.length > 0 ? (
+                      <>
+                        {/* Loading indicator */}
+                        {!isVideoLoaded && (
+                          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-rose-900/20 to-pink-900/20 z-5">
+                            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-rose-400 to-pink-500 flex items-center justify-center shadow-lg animate-pulse">
+                              <span className="text-white text-xl font-bold">W</span>
                             </div>
-                            <p class="text-slate-400 text-sm">${t.appPreview}</p>
-                            <p class="text-slate-300 text-xs mt-1">${t.placeScreenshot}</p>
                           </div>
-                        `;
-                      }}
-                    />
+                        )}
+                        
+                        {videos.map((videoSrc, index) => (
+                          <video
+                            key={index}
+                            ref={(el) => (videoRefs.current[index] = el)}
+                            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+                              index === currentVideoIndex ? 'opacity-100' : 'opacity-0'
+                            }`}
+                            muted
+                            loop
+                            playsInline
+                            autoPlay={index === 0}
+                            onLoadedData={() => handleVideoLoaded(index)}
+                            onCanPlay={() => handleVideoLoaded(index)}
+                          >
+                            <source src={videoSrc} type="video/mp4" />
+                          </video>
+                        ))}
+                        
+                        {/* Navigation Arrows */}
+                        {videos.length > 1 && (
+                          <>
+                            <button
+                              onClick={prevVideo}
+                              className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors z-10"
+                            >
+                              <ChevronLeft className="w-5 h-5 text-slate-700" />
+                            </button>
+                            <button
+                              onClick={nextVideo}
+                              className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors z-10"
+                            >
+                              <ChevronRight className="w-5 h-5 text-slate-700" />
+                            </button>
+                            
+                            {/* Dots indicator */}
+                            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                              {videos.map((_, index) => (
+                                <button
+                                  key={index}
+                                  onClick={() => setCurrentVideoIndex(index)}
+                                  className={`w-2 h-2 rounded-full transition-all ${
+                                    index === currentVideoIndex 
+                                      ? 'bg-rose-500 w-4' 
+                                      : 'bg-white/60 hover:bg-white/80'
+                                  }`}
+                                />
+                              ))}
+                            </div>
+                          </>
+                        )}
+                      </>
+                    ) : (
+                      <div className="flex flex-col items-center justify-center h-full p-6 text-center">
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-rose-400 to-pink-500 flex items-center justify-center mb-4 shadow-lg">
+                          <span className="text-white text-3xl font-bold">W</span>
+                        </div>
+                        <p className="text-slate-400 text-sm">{t.appPreview}</p>
+                        <p className="text-slate-300 text-xs mt-1">{t.placeScreenshot}</p>
+                      </div>
+                    )}
                   </div>
                 </div>
                 
