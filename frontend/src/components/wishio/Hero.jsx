@@ -179,9 +179,18 @@ const Hero = () => {
                   </div>
                   
                   {/* Video Carousel */}
-                  <div className="relative aspect-[9/18] bg-gradient-to-b from-rose-50 to-pink-50 overflow-hidden">
+                  <div className="relative aspect-[9/18] bg-slate-900 overflow-hidden">
                     {videos.length > 0 ? (
                       <>
+                        {/* Loading indicator */}
+                        {!isVideoLoaded && (
+                          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-rose-900/20 to-pink-900/20 z-5">
+                            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-rose-400 to-pink-500 flex items-center justify-center shadow-lg animate-pulse">
+                              <span className="text-white text-xl font-bold">W</span>
+                            </div>
+                          </div>
+                        )}
+                        
                         {videos.map((videoSrc, index) => (
                           <video
                             key={index}
@@ -192,7 +201,9 @@ const Hero = () => {
                             muted
                             loop
                             playsInline
-                            autoPlay={index === currentVideoIndex}
+                            autoPlay={index === 0}
+                            onLoadedData={() => handleVideoLoaded(index)}
+                            onCanPlay={() => handleVideoLoaded(index)}
                           >
                             <source src={videoSrc} type="video/mp4" />
                           </video>
