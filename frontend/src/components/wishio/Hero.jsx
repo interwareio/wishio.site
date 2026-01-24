@@ -171,15 +171,16 @@ const Hero = () => {
                           <video
                             key={index}
                             ref={(el) => (videoRefs.current[index] = el)}
-                            src={videoSrc}
                             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
                               index === currentVideoIndex ? 'opacity-100' : 'opacity-0'
                             }`}
                             muted
                             loop
                             playsInline
-                            preload="metadata"
-                          />
+                            autoPlay={index === currentVideoIndex}
+                          >
+                            <source src={videoSrc} type="video/mp4" />
+                          </video>
                         ))}
                         
                         {/* Navigation Arrows */}
