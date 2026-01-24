@@ -9,14 +9,17 @@ import { useLanguage } from '../../i18n/LanguageContext';
 const Hero = () => {
   const { t } = useLanguage();
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const videoRefs = useRef([]);
   const videos = siteConfig.heroVideos || [];
   
   const nextVideo = () => {
+    setIsVideoLoaded(false);
     setCurrentVideoIndex((prev) => (prev + 1) % videos.length);
   };
   
   const prevVideo = () => {
+    setIsVideoLoaded(false);
     setCurrentVideoIndex((prev) => (prev - 1 + videos.length) % videos.length);
   };
 
@@ -25,14 +28,26 @@ const Hero = () => {
     videoRefs.current.forEach((video, index) => {
       if (video) {
         if (index === currentVideoIndex) {
-          video.play().catch(() => {});
+          video.currentTime = 0;
+          const playPromise = video.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(() => {
+              // Auto-play was prevented, show video anyway
+              setIsVideoLoaded(true);
+            });
+          }
         } else {
           video.pause();
-          video.currentTime = 0;
         }
       }
     });
   }, [currentVideoIndex]);
+
+  const handleVideoLoaded = (index) => {
+    if (index === currentVideoIndex) {
+      setIsVideoLoaded(true);
+    }
+  };
   
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
