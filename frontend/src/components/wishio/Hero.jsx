@@ -5,6 +5,7 @@ import { Apple, Play, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '../ui/button';
 import { siteConfig } from '../../config/siteConfig';
 import { useLanguage } from '../../i18n/LanguageContext';
+import WishioLogo from './WishioLogo';
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -185,9 +186,10 @@ const Hero = () => {
                         {/* Loading indicator */}
                         {!isVideoLoaded && (
                           <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-rose-900/20 to-pink-900/20 z-5">
-                            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-rose-400 to-pink-500 flex items-center justify-center shadow-lg animate-pulse">
-                              <span className="text-white text-xl font-bold">W</span>
-                            </div>
+                            <WishioLogo
+                              className="w-12 h-12 rounded-2xl shadow-lg animate-pulse"
+                              iconClassName="w-6 h-6"
+                            />
                           </div>
                         )}
                         
@@ -244,9 +246,7 @@ const Hero = () => {
                       </>
                     ) : (
                       <div className="flex flex-col items-center justify-center h-full p-6 text-center">
-                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-rose-400 to-pink-500 flex items-center justify-center mb-4 shadow-lg">
-                          <span className="text-white text-3xl font-bold">W</span>
-                        </div>
+                        <WishioLogo className="w-16 h-16 rounded-2xl mb-4 shadow-lg" iconClassName="w-8 h-8" />
                         <p className="text-slate-400 text-sm">{t.appPreview}</p>
                         <p className="text-slate-300 text-xs mt-1">{t.placeScreenshot}</p>
                       </div>

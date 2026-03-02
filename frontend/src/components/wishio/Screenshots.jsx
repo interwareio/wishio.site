@@ -99,7 +99,7 @@ const Screenshots = () => {
                         </div>
                         
                         {/* Screenshot */}
-                        <div className="aspect-[9/19] bg-gradient-to-b from-slate-800 to-slate-900">
+                        <div className="aspect-[1290/2796] bg-gradient-to-b from-slate-800 to-slate-900">
                           <img
                             src={screenshot.src}
                             alt={t[screenshot.captionKey]}

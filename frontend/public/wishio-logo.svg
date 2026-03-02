@@ -1,0 +1,28 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="wishio-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9F67FF" />
+      <stop offset="100%" stop-color="#7C3AED" />
+    </linearGradient>
+    <filter id="wishio-shadow" x="224" y="232" width="576" height="560" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+      <feOffset dy="12" />
+      <feGaussianBlur stdDeviation="10" />
+      <feComposite in2="hardAlpha" operator="out" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0.270588 0 0 0 0 0.160784 0 0 0 0 0.521569 0 0 0 0.22 0" />
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" rx="0" fill="url(#wishio-bg)" />
+
+  <g filter="url(#wishio-shadow)" stroke="white" stroke-width="34" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="258" y="390" width="508" height="340" rx="42" />
+    <path d="M512 390V730" />
+    <path d="M258 500H766" />
+    <path d="M512 390C445.733 390 389 356.569 389 304.467C389 261.899 422.314 229 463.4 229C526.14 229 572.464 292.459 578 390" />
+    <path d="M512 390C578.267 390 635 356.569 635 304.467C635 261.899 601.686 229 560.6 229C497.86 229 451.536 292.459 446 390" />
+  </g>
+</svg>

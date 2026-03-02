@@ -5,6 +5,7 @@ import { Apple, Play, Shield } from 'lucide-react';
 import { Button } from '../ui/button';
 import { siteConfig } from '../../config/siteConfig';
 import { useLanguage } from '../../i18n/LanguageContext';
+import WishioLogo from './WishioLogo';
 
 const Download = () => {
   const { t } = useLanguage();
@@ -31,9 +32,11 @@ const Download = () => {
               whileInView={{ scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
-              className="w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-br from-rose-400 to-pink-500 flex items-center justify-center shadow-xl shadow-rose-500/30"
             >
-              <span className="text-4xl text-white font-bold">W</span>
+              <WishioLogo
+                className="w-20 h-20 mx-auto mb-6 rounded-3xl shadow-xl shadow-purple-500/30"
+                iconClassName="w-10 h-10"
+              />
             </motion.div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 mb-4">

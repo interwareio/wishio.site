@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Heart, Mail } from 'lucide-react';
 import { siteConfig } from '../../config/siteConfig';
 import { useLanguage } from '../../i18n/LanguageContext';
+import WishioLogo from './WishioLogo';
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -29,9 +30,7 @@ const Footer = () => {
           {/* Logo & Company */}
           <div className="flex flex-col items-center mb-8">
             <div className="flex items-center gap-2 mb-2">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-400 to-pink-500 flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-xl">W</span>
-              </div>
+              <WishioLogo className="w-10 h-10 rounded-xl shadow-lg" iconClassName="w-6 h-6" />
               <span className="text-2xl font-bold text-white">
                 {siteConfig.appName}
               </span>

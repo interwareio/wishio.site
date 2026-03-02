@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '../ui/button';
 import { siteConfig } from '../../config/siteConfig';
 import { useLanguage } from '../../i18n/LanguageContext';
+import WishioLogo from './WishioLogo';
 
 const Navbar = () => {
   const { t } = useLanguage();
@@ -51,9 +52,7 @@ const Navbar = () => {
             className="flex items-center gap-2 cursor-pointer"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-rose-400 to-pink-500 flex items-center justify-center shadow-lg">
-              <span className="text-white font-bold text-lg">W</span>
-            </div>
+            <WishioLogo className="w-9 h-9 rounded-xl shadow-lg" iconClassName="w-5 h-5" />
             <span className="text-xl font-bold bg-gradient-to-r from-rose-500 to-pink-500 bg-clip-text text-transparent">
               {siteConfig.appName}
             </span>

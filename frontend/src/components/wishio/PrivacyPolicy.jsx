@@ -4,6 +4,7 @@ import { ArrowLeft, Shield, Database, BarChart3, Lock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { siteConfig } from '../../config/siteConfig';
 import { useLanguage } from '../../i18n/LanguageContext';
+import WishioLogo from './WishioLogo';
 
 // Privacy Policy translations
 const privacyTranslations = {
@@ -614,9 +615,7 @@ const PrivacyPolicy = () => {
               <span className="font-medium">{t.backToHome}</span>
             </Link>
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-rose-400 to-pink-500 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">W</span>
-              </div>
+              <WishioLogo className="w-8 h-8 rounded-lg" iconClassName="w-4 h-4" />
               <span className="font-bold text-slate-800">{siteConfig.appName}</span>
             </div>
           </div>
