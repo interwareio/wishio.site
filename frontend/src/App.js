@@ -9,6 +9,7 @@ import Screenshots from "./components/wishio/Screenshots";
 import Download from "./components/wishio/Download";
 import Footer from "./components/wishio/Footer";
 import PrivacyPolicy from "./components/wishio/PrivacyPolicy";
+import TermsAndConditions from "./components/wishio/TermsAndConditions";
 
 // Landing Page Component
 const LandingPage = () => {
@@ -34,6 +35,7 @@ function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           </Routes>
         </BrowserRouter>
       </div>

@@ -28,7 +28,7 @@ export const siteConfig = {
   
   // Legal Pages (placeholders)
   privacyPolicyUrl: "/privacy",
-  termsUrl: "/terms",
+  termsUrl: "/terms-and-conditions",
   
   // Hero Videos for phone mockup carousel
   heroVideos: [
