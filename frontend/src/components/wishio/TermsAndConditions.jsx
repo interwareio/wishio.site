@@ -28,6 +28,9 @@ const termsTranslations = {
     section5Title: "Governing Law and Jurisdiction",
     section5Content:
       "For all legal purposes, these terms are governed by the laws of the Oriental Republic of Uruguay. Any dispute, claim, or controversy arising out of or related to these terms or the use of the app shall be submitted exclusively to the competent courts of Montevideo, Uruguay, and the parties expressly waive any other jurisdiction that might otherwise apply.",
+    section6Title: "Apple App Store Subscriptions and Payments",
+    section6Content:
+      "If a subscription or any payment is made through Apple's App Store, the Apple Standard End User License Agreement (Standard EULA) applies to those transactions and to the rights and obligations associated with them. The current Standard EULA is available at: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/. In case of conflict regarding Apple-billed purchases, Apple's Standard EULA and App Store terms prevail to the extent required by applicable law.",
     contactTitle: "Contact",
     contactContent: "If you have any questions about these Terms and Conditions, contact us at:",
     closing:
@@ -54,6 +57,9 @@ const termsTranslations = {
     section5Title: "Ley Aplicable y Jurisdicción",
     section5Content:
       "A todos los efectos legales, estos términos se regirán e interpretarán conforme a las leyes de la República Oriental del Uruguay. Toda controversia, reclamo o litigio que derive de estos términos o del uso de la app será sometido en forma exclusiva a la jurisdicción de los tribunales competentes de Montevideo, Uruguay, con renuncia expresa a cualquier otro fuero o jurisdicción que pudiera corresponder.",
+    section6Title: "Suscripciones y Pagos mediante Apple",
+    section6Content:
+      "Si una suscripción o cualquier pago se realiza a través del App Store de Apple, respecto de dichas transacciones y de los derechos y obligaciones vinculados a ellas resultará aplicable el Contrato de Licencia de Usuario Final Estándar de Apple (Standard EULA). La versión vigente puede consultarse en: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/. En caso de conflicto sobre compras facturadas por Apple, prevalecerán el Standard EULA y los términos del App Store en la medida exigida por la normativa aplicable.",
     contactTitle: "Contacto",
     contactContent: "Si tienes preguntas sobre estos Términos y Condiciones, puedes escribirnos a:",
     closing:
@@ -428,6 +434,7 @@ const termsTranslations = {
 const TermsAndConditions = () => {
   const { language } = useLanguage();
   const t = termsTranslations[language] || termsTranslations.en;
+  const getTermText = (key) => t[key] || termsTranslations.en[key];
   const currentDate = new Date().toLocaleDateString(language, {
     year: "numeric",
     month: "long",
@@ -440,6 +447,7 @@ const TermsAndConditions = () => {
     { key: "section3", icon: Shield },
     { key: "section4", icon: MessageSquareWarning },
     { key: "section5", icon: Scale },
+    { key: "section6", icon: Scale },
   ];
 
   return (
@@ -488,8 +496,10 @@ const TermsAndConditions = () => {
                       <IconComponent className="w-6 h-6 text-rose-500" />
                     </div>
                     <div className="flex-1">
-                      <h2 className="text-xl font-semibold text-slate-800 mb-3">{t[`${section.key}Title`]}</h2>
-                      <p className="text-slate-600 leading-relaxed">{t[`${section.key}Content`]}</p>
+                      <h2 className="text-xl font-semibold text-slate-800 mb-3">
+                        {getTermText(`${section.key}Title`)}
+                      </h2>
+                      <p className="text-slate-600 leading-relaxed">{getTermText(`${section.key}Content`)}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -500,7 +510,7 @@ const TermsAndConditions = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
             className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 mt-6"
           >
             <h2 className="text-xl font-semibold text-slate-800 mb-3">{t.contactTitle}</h2>
@@ -516,7 +526,7 @@ const TermsAndConditions = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
             className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-2xl p-8 mt-8 text-center"
           >
             <p className="text-slate-700 leading-relaxed max-w-2xl mx-auto">{t.closing}</p>
