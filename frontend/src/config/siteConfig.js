@@ -8,9 +8,11 @@ export const siteConfig = {
   // App Information
   appName: "Wishio",
   
-  // Store URLs (replace with your actual URLs)
-  iosAppStoreUrl: "https://apps.apple.com/app/idYOUR_ID_HERE",
-  googlePlayUrl: "https://play.google.com/store/apps/details?id=YOUR_PACKAGE_HERE",
+  // Store URLs
+  iosAppStoreUrl: "https://apps.apple.com/us/app/wishio-birthday-reminder/id675736925",
+  googlePlayUrl: "",
+  androidComingSoon: true,
+  androidComingSoonLabel: "Coming Soon",
   
   // Contact Information
   contactEmail: "hello@wishio.site",

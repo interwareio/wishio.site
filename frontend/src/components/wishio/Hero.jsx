@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { QRCodeSVG } from 'qrcode.react';
-import { Apple, Play, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Apple, Play, ChevronLeft, ChevronRight, Clock3 } from 'lucide-react';
 import { Button } from '../ui/button';
 import { siteConfig } from '../../config/siteConfig';
 import { useLanguage } from '../../i18n/LanguageContext';
@@ -13,6 +13,9 @@ const Hero = () => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const videoRefs = useRef([]);
   const videos = siteConfig.heroVideos || [];
+  const isAndroidComingSoon = siteConfig.androidComingSoon || !siteConfig.googlePlayUrl;
+  const androidComingSoonLabel = siteConfig.androidComingSoonLabel || 'Coming Soon';
+  const qrPlaceholderSquares = Array.from({ length: 25 }, (_, index) => index);
   
   const nextVideo = () => {
     setIsVideoLoaded(false);
@@ -109,21 +112,36 @@ const Hero = () => {
                 </Button>
               </motion.a>
 
-              <motion.a
-                href={siteConfig.googlePlayUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Button className="w-full sm:w-auto h-14 px-6 bg-slate-900 hover:bg-slate-800 text-white rounded-2xl flex items-center gap-3 shadow-lg shadow-slate-900/20">
-                  <Play className="w-6 h-6 fill-current" />
-                  <div className="text-left">
-                    <div className="text-xs opacity-80">{t.getItOn}</div>
-                    <div className="text-base font-semibold -mt-0.5">{t.googlePlay}</div>
-                  </div>
-                </Button>
-              </motion.a>
+              {isAndroidComingSoon ? (
+                <div>
+                  <Button
+                    disabled
+                    className="w-full sm:w-auto h-14 px-6 bg-slate-200 hover:bg-slate-200 text-slate-600 rounded-2xl flex items-center gap-3 shadow-none disabled:opacity-100"
+                  >
+                    <Play className="w-6 h-6 fill-current" />
+                    <div className="text-left">
+                      <div className="text-xs uppercase tracking-[0.14em] opacity-80">{androidComingSoonLabel}</div>
+                      <div className="text-base font-semibold -mt-0.5">{t.googlePlay}</div>
+                    </div>
+                  </Button>
+                </div>
+              ) : (
+                <motion.a
+                  href={siteConfig.googlePlayUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Button className="w-full sm:w-auto h-14 px-6 bg-slate-900 hover:bg-slate-800 text-white rounded-2xl flex items-center gap-3 shadow-lg shadow-slate-900/20">
+                    <Play className="w-6 h-6 fill-current" />
+                    <div className="text-left">
+                      <div className="text-xs opacity-80">{t.getItOn}</div>
+                      <div className="text-base font-semibold -mt-0.5">{t.googlePlay}</div>
+                    </div>
+                  </Button>
+                </motion.a>
+              )}
             </div>
 
             {/* QR Codes */}
@@ -147,13 +165,34 @@ const Hero = () => {
               </div>
               <div className="flex flex-col items-center">
                 <div className="p-3 bg-white rounded-2xl shadow-lg shadow-slate-200/50 backdrop-blur-sm border border-white/50">
-                  <QRCodeSVG
-                    value={siteConfig.googlePlayUrl}
-                    size={80}
-                    level="M"
-                    fgColor="#1e293b"
-                    bgColor="transparent"
-                  />
+                  {isAndroidComingSoon ? (
+                    <div className="relative flex h-20 w-20 items-center justify-center overflow-hidden rounded-xl bg-slate-50">
+                      <div className="grid grid-cols-5 gap-1 p-2 opacity-35">
+                        {qrPlaceholderSquares.map((squareIndex) => (
+                          <span
+                            key={squareIndex}
+                            className={`h-2.5 w-2.5 rounded-sm ${
+                              squareIndex % 2 === 0 || squareIndex % 7 === 0 ? 'bg-slate-400' : 'bg-slate-200'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                      <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/85 backdrop-blur-[1px]">
+                        <Clock3 className="w-5 h-5 text-slate-500" />
+                        <span className="mt-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+                          {androidComingSoonLabel}
+                        </span>
+                      </div>
+                    </div>
+                  ) : (
+                    <QRCodeSVG
+                      value={siteConfig.googlePlayUrl}
+                      size={80}
+                      level="M"
+                      fgColor="#1e293b"
+                      bgColor="transparent"
+                    />
+                  )}
                 </div>
                 <span className="text-xs text-slate-500 mt-2 font-medium">{t.android}</span>
               </div>
