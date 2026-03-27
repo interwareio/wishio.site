@@ -16,11 +16,11 @@ const privacyTranslations = {
     
     section1Title: "Information We Don't Collect",
     section1Icon: Shield,
-    section1Content: "If you do not use the Wishio web app, we do not store any personal information about you. The mobile app is designed to work locally on your device, keeping your data private and secure.",
+    section1Content: "We do not store your contacts, birthdays, or personal event data on our servers. Wishio is designed to work locally on your device, keeping your data private and secure.",
     
-    section2Title: "Information When Using Web App",
+    section2Title: "Data Stored on Your Device",
     section2Icon: Database,
-    section2Content: "If you choose to use the Wishio web app, contacts you share are stored on our servers to enable the web functionality. However, this information is not used, sold, or accessed by us for any purpose other than providing you with the service you requested.",
+    section2Content: "Your contacts, birthdays, reminders, and related app data stay on your device unless you choose to share or export them using features provided by your platform.",
     
     section3Title: "Anonymous Analytics",
     section3Icon: BarChart3,
@@ -52,11 +52,11 @@ const privacyTranslations = {
     
     section1Title: "Información que No Recopilamos",
     section1Icon: Shield,
-    section1Content: "Si no utilizas la aplicación web de Wishio, no almacenamos ninguna información personal sobre ti. La aplicación móvil está diseñada para funcionar localmente en tu dispositivo, manteniendo tus datos privados y seguros.",
+    section1Content: "No almacenamos tus contactos, cumpleaños ni datos personales de eventos en nuestros servidores. Wishio está diseñada para funcionar localmente en tu dispositivo, manteniendo tus datos privados y seguros.",
     
-    section2Title: "Información al Usar la App Web",
+    section2Title: "Datos Almacenados en tu Dispositivo",
     section2Icon: Database,
-    section2Content: "Si decides usar la aplicación web de Wishio, los contactos que compartas se almacenan en nuestros servidores para habilitar la funcionalidad web. Sin embargo, esta información no es utilizada, vendida ni accedida por nosotros para ningún propósito que no sea proporcionarte el servicio que solicitaste.",
+    section2Content: "Tus contactos, cumpleaños, recordatorios y datos relacionados de la app permanecen en tu dispositivo, salvo que decidas compartirlos o exportarlos mediante funciones de tu plataforma.",
     
     section3Title: "Analítica Anónima",
     section3Icon: BarChart3,
@@ -88,11 +88,11 @@ const privacyTranslations = {
     
     section1Title: "Informações que Não Coletamos",
     section1Icon: Shield,
-    section1Content: "Se você não usar o aplicativo web da Wishio, não armazenamos nenhuma informação pessoal sobre você. O aplicativo móvel é projetado para funcionar localmente no seu dispositivo, mantendo seus dados privados e seguros.",
+    section1Content: "Não armazenamos seus contatos, aniversários nem dados pessoais de eventos em nossos servidores. A Wishio foi projetada para funcionar localmente no seu dispositivo, mantendo seus dados privados e seguros.",
     
-    section2Title: "Informações ao Usar o App Web",
+    section2Title: "Dados Armazenados no seu Dispositivo",
     section2Icon: Database,
-    section2Content: "Se você optar por usar o aplicativo web da Wishio, os contatos que você compartilhar são armazenados em nossos servidores para habilitar a funcionalidade web. No entanto, essas informações não são usadas, vendidas ou acessadas por nós para qualquer finalidade além de fornecer o serviço que você solicitou.",
+    section2Content: "Seus contatos, aniversários, lembretes e outros dados relacionados ao app permanecem no seu dispositivo, a menos que você escolha compartilhá-los ou exportá-los usando recursos da sua plataforma.",
     
     section3Title: "Análise Anônima",
     section3Icon: BarChart3,
@@ -124,11 +124,11 @@ const privacyTranslations = {
     
     section1Title: "Informations que Nous Ne Collectons Pas",
     section1Icon: Shield,
-    section1Content: "Si vous n'utilisez pas l'application web Wishio, nous ne stockons aucune information personnelle vous concernant. L'application mobile est conçue pour fonctionner localement sur votre appareil, gardant vos données privées et sécurisées.",
+    section1Content: "Nous ne stockons pas vos contacts, anniversaires ni données personnelles liées à vos événements sur nos serveurs. Wishio est conçue pour fonctionner localement sur votre appareil, en gardant vos données privées et sécurisées.",
     
-    section2Title: "Informations lors de l'Utilisation de l'App Web",
+    section2Title: "Données Stockées sur Votre Appareil",
     section2Icon: Database,
-    section2Content: "Si vous choisissez d'utiliser l'application web Wishio, les contacts que vous partagez sont stockés sur nos serveurs pour activer la fonctionnalité web. Cependant, ces informations ne sont pas utilisées, vendues ou consultées par nous à d'autres fins que de vous fournir le service que vous avez demandé.",
+    section2Content: "Vos contacts, anniversaires, rappels et autres données liées à l'application restent sur votre appareil, sauf si vous choisissez de les partager ou de les exporter à l'aide des fonctionnalités de votre plateforme.",
     
     section3Title: "Analyses Anonymes",
     section3Icon: BarChart3,
@@ -160,11 +160,11 @@ const privacyTranslations = {
     
     section1Title: "Informationen, die Wir Nicht Sammeln",
     section1Icon: Shield,
-    section1Content: "Wenn Sie die Wishio Web-App nicht verwenden, speichern wir keine persönlichen Informationen über Sie. Die mobile App ist so konzipiert, dass sie lokal auf Ihrem Gerät funktioniert und Ihre Daten privat und sicher hält.",
+    section1Content: "Wir speichern Ihre Kontakte, Geburtstage oder persönlichen Ereignisdaten nicht auf unseren Servern. Wishio ist so konzipiert, dass die App lokal auf Ihrem Gerät funktioniert und Ihre Daten privat und sicher bleiben.",
     
-    section2Title: "Informationen bei Nutzung der Web-App",
+    section2Title: "Auf Ihrem Gerät Gespeicherte Daten",
     section2Icon: Database,
-    section2Content: "Wenn Sie sich entscheiden, die Wishio Web-App zu nutzen, werden die von Ihnen geteilten Kontakte auf unseren Servern gespeichert, um die Web-Funktionalität zu ermöglichen. Diese Informationen werden jedoch von uns nicht genutzt, verkauft oder abgerufen, außer um Ihnen den von Ihnen angeforderten Service bereitzustellen.",
+    section2Content: "Ihre Kontakte, Geburtstage, Erinnerungen und sonstigen App-Daten bleiben auf Ihrem Gerät, es sei denn, Sie entscheiden sich, sie über Funktionen Ihrer Plattform zu teilen oder zu exportieren.",
     
     section3Title: "Anonyme Analysen",
     section3Icon: BarChart3,
@@ -196,11 +196,11 @@ const privacyTranslations = {
     
     section1Title: "Informazioni che Non Raccogliamo",
     section1Icon: Shield,
-    section1Content: "Se non utilizzi l'app web Wishio, non memorizziamo alcuna informazione personale su di te. L'app mobile è progettata per funzionare localmente sul tuo dispositivo, mantenendo i tuoi dati privati e sicuri.",
+    section1Content: "Non memorizziamo sui nostri server i tuoi contatti, compleanni o dati personali relativi agli eventi. Wishio è progettata per funzionare localmente sul tuo dispositivo, mantenendo i tuoi dati privati e sicuri.",
     
-    section2Title: "Informazioni nell'Uso dell'App Web",
+    section2Title: "Dati Memorizzati sul Tuo Dispositivo",
     section2Icon: Database,
-    section2Content: "Se scegli di utilizzare l'app web Wishio, i contatti che condividi vengono memorizzati sui nostri server per abilitare la funzionalità web. Tuttavia, queste informazioni non vengono utilizzate, vendute o consultate da noi per scopi diversi dalla fornitura del servizio richiesto.",
+    section2Content: "I tuoi contatti, compleanni, promemoria e gli altri dati relativi all'app restano sul tuo dispositivo, a meno che tu non scelga di condividerli o esportarli tramite le funzioni della tua piattaforma.",
     
     section3Title: "Analisi Anonime",
     section3Icon: BarChart3,
@@ -232,11 +232,11 @@ const privacyTranslations = {
     
     section1Title: "我们不收集的信息",
     section1Icon: Shield,
-    section1Content: "如果您不使用 Wishio 网页应用，我们不会存储任何关于您的个人信息。移动应用程序设计为在您的设备上本地运行，保持您的数据私密和安全。",
+    section1Content: "我们不会在服务器上存储您的联系人、生日或个人事件数据。Wishio 旨在在您的设备上本地运行，确保您的数据保持私密和安全。",
     
-    section2Title: "使用网页应用时的信息",
+    section2Title: "存储在您设备上的数据",
     section2Icon: Database,
-    section2Content: "如果您选择使用 Wishio 网页应用，您分享的联系人将存储在我们的服务器上以启用网页功能。但是，这些信息不会被我们使用、出售或访问，除非是为了向您提供所请求的服务。",
+    section2Content: "您的联系人、生日、提醒事项及其他相关应用数据都会保留在您的设备上，除非您选择使用平台提供的功能进行共享或导出。",
     
     section3Title: "匿名分析",
     section3Icon: BarChart3,
@@ -268,11 +268,11 @@ const privacyTranslations = {
     
     section1Title: "収集しない情報",
     section1Icon: Shield,
-    section1Content: "Wishio Webアプリを使用しない場合、お客様の個人情報は一切保存しません。モバイルアプリは、お客様のデバイス上でローカルに動作するように設計されており、データをプライベートかつ安全に保ちます。",
+    section1Content: "当社は、お客様の連絡先、誕生日、個人的なイベントデータを当社のサーバーに保存しません。Wishio はお客様のデバイス上でローカルに動作するよう設計されており、データをプライベートかつ安全に保ちます。",
     
-    section2Title: "Webアプリ使用時の情報",
+    section2Title: "デバイス上に保存されるデータ",
     section2Icon: Database,
-    section2Content: "Wishio Webアプリの使用を選択した場合、共有された連絡先はWeb機能を有効にするために当社のサーバーに保存されます。ただし、この情報は、お客様が要求したサービスを提供する以外の目的で、当社が使用、販売、またはアクセスすることはありません。",
+    section2Content: "お客様の連絡先、誕生日、リマインダー、その他の関連データは、プラットフォームの機能を使って共有または書き出すことをお客様が選択しない限り、お客様のデバイス上に保持されます。",
     
     section3Title: "匿名分析",
     section3Icon: BarChart3,
@@ -304,11 +304,11 @@ const privacyTranslations = {
     
     section1Title: "수집하지 않는 정보",
     section1Icon: Shield,
-    section1Content: "Wishio 웹 앱을 사용하지 않으면 귀하에 대한 개인 정보를 저장하지 않습니다. 모바일 앱은 귀하의 기기에서 로컬로 작동하도록 설계되어 데이터를 비공개로 안전하게 유지합니다.",
+    section1Content: "당사는 귀하의 연락처, 생일 또는 개인 이벤트 데이터를 당사 서버에 저장하지 않습니다. Wishio는 귀하의 기기에서 로컬로 작동하도록 설계되어 데이터를 비공개로 안전하게 유지합니다.",
     
-    section2Title: "웹 앱 사용 시 정보",
+    section2Title: "기기에 저장되는 데이터",
     section2Icon: Database,
-    section2Content: "Wishio 웹 앱을 사용하기로 선택한 경우, 공유한 연락처는 웹 기능을 활성화하기 위해 당사 서버에 저장됩니다. 그러나 이 정보는 요청한 서비스를 제공하는 것 외에는 당사가 사용, 판매 또는 접근하지 않습니다.",
+    section2Content: "귀하의 연락처, 생일, 미리 알림 및 기타 관련 앱 데이터는 플랫폼 기능을 사용해 직접 공유하거나 내보내기로 선택하지 않는 한 귀하의 기기에 남아 있습니다.",
     
     section3Title: "익명 분석",
     section3Icon: BarChart3,
@@ -340,11 +340,11 @@ const privacyTranslations = {
     
     section1Title: "المعلومات التي لا نجمعها",
     section1Icon: Shield,
-    section1Content: "إذا لم تستخدم تطبيق Wishio على الويب، فإننا لا نخزن أي معلومات شخصية عنك. تم تصميم التطبيق المحمول للعمل محلياً على جهازك، مع الحفاظ على خصوصية بياناتك وأمانها.",
+    section1Content: "نحن لا نخزن جهات الاتصال أو أعياد الميلاد أو بيانات الأحداث الشخصية الخاصة بك على خوادمنا. تم تصميم Wishio للعمل محلياً على جهازك، مع الحفاظ على خصوصية بياناتك وأمانها.",
     
-    section2Title: "المعلومات عند استخدام تطبيق الويب",
+    section2Title: "البيانات المخزنة على جهازك",
     section2Icon: Database,
-    section2Content: "إذا اخترت استخدام تطبيق Wishio على الويب، يتم تخزين جهات الاتصال التي تشاركها على خوادمنا لتمكين وظائف الويب. ومع ذلك، لا يتم استخدام هذه المعلومات أو بيعها أو الوصول إليها من قبلنا لأي غرض آخر غير تقديم الخدمة التي طلبتها.",
+    section2Content: "تظل جهات الاتصال وأعياد الميلاد والتذكيرات والبيانات الأخرى المرتبطة بالتطبيق على جهازك، ما لم تختر مشاركتها أو تصديرها باستخدام الميزات التي توفرها منصتك.",
     
     section3Title: "التحليلات المجهولة",
     section3Icon: BarChart3,
@@ -376,11 +376,11 @@ const privacyTranslations = {
     
     section1Title: "जानकारी जो हम एकत्र नहीं करते",
     section1Icon: Shield,
-    section1Content: "यदि आप Wishio वेब ऐप का उपयोग नहीं करते हैं, तो हम आपके बारे में कोई व्यक्तिगत जानकारी संग्रहीत नहीं करते हैं। मोबाइल ऐप आपके डिवाइस पर स्थानीय रूप से काम करने के लिए डिज़ाइन किया गया है, जो आपके डेटा को निजी और सुरक्षित रखता है।",
+    section1Content: "हम आपके संपर्क, जन्मदिन या व्यक्तिगत इवेंट डेटा को अपने सर्वरों पर संग्रहीत नहीं करते हैं। Wishio को आपके डिवाइस पर स्थानीय रूप से काम करने के लिए डिज़ाइन किया गया है, जिससे आपका डेटा निजी और सुरक्षित रहता है।",
     
-    section2Title: "वेब ऐप का उपयोग करते समय जानकारी",
+    section2Title: "आपके डिवाइस पर संग्रहीत डेटा",
     section2Icon: Database,
-    section2Content: "यदि आप Wishio वेब ऐप का उपयोग करना चुनते हैं, तो आपके द्वारा साझा किए गए संपर्क वेब कार्यक्षमता को सक्षम करने के लिए हमारे सर्वर पर संग्रहीत किए जाते हैं। हालांकि, इस जानकारी का उपयोग, बिक्री या हमारे द्वारा किसी अन्य उद्देश्य के लिए एक्सेस नहीं किया जाता है सिवाय आपको अनुरोधित सेवा प्रदान करने के।",
+    section2Content: "आपके संपर्क, जन्मदिन, रिमाइंडर और अन्य संबंधित ऐप डेटा आपके डिवाइस पर ही रहते हैं, जब तक कि आप उन्हें अपने प्लेटफ़ॉर्म की सुविधाओं का उपयोग करके साझा या निर्यात करने का विकल्प न चुनें।",
     
     section3Title: "अनाम विश्लेषण",
     section3Icon: BarChart3,
@@ -412,11 +412,11 @@ const privacyTranslations = {
     
     section1Title: "Информация, Которую Мы Не Собираем",
     section1Icon: Shield,
-    section1Content: "Если вы не используете веб-приложение Wishio, мы не храним никакой личной информации о вас. Мобильное приложение разработано для локальной работы на вашем устройстве, сохраняя ваши данные приватными и безопасными.",
+    section1Content: "Мы не храним ваши контакты, дни рождения или личные данные о событиях на наших серверах. Wishio разработан для локальной работы на вашем устройстве, сохраняя ваши данные приватными и безопасными.",
     
-    section2Title: "Информация при Использовании Веб-Приложения",
+    section2Title: "Данные, Хранящиеся на Вашем Устройстве",
     section2Icon: Database,
-    section2Content: "Если вы решите использовать веб-приложение Wishio, контакты, которыми вы делитесь, хранятся на наших серверах для обеспечения веб-функциональности. Однако эта информация не используется, не продаётся и не просматривается нами в каких-либо целях, кроме предоставления вам запрошенной услуги.",
+    section2Content: "Ваши контакты, дни рождения, напоминания и другие связанные данные приложения остаются на вашем устройстве, если только вы сами не решите поделиться ими или экспортировать их с помощью функций вашей платформы.",
     
     section3Title: "Анонимная Аналитика",
     section3Icon: BarChart3,
@@ -448,11 +448,11 @@ const privacyTranslations = {
     
     section1Title: "Toplamadığımız Bilgiler",
     section1Icon: Shield,
-    section1Content: "Wishio web uygulamasını kullanmıyorsanız, hakkınızda hiçbir kişisel bilgi saklamıyoruz. Mobil uygulama, verilerinizi gizli ve güvenli tutarak cihazınızda yerel olarak çalışacak şekilde tasarlanmıştır.",
+    section1Content: "Kişilerinizi, doğum günlerinizi veya kişisel etkinlik verilerinizi sunucularımızda saklamıyoruz. Wishio, verilerinizi gizli ve güvenli tutarak cihazınızda yerel olarak çalışacak şekilde tasarlanmıştır.",
     
-    section2Title: "Web Uygulamasını Kullanırken Bilgiler",
+    section2Title: "Cihazınızda Saklanan Veriler",
     section2Icon: Database,
-    section2Content: "Wishio web uygulamasını kullanmayı seçerseniz, paylaştığınız kişiler web işlevselliğini etkinleştirmek için sunucularımızda saklanır. Ancak bu bilgiler, size talep ettiğiniz hizmeti sağlamanın dışında herhangi bir amaçla tarafımızca kullanılmaz, satılmaz veya erişilmez.",
+    section2Content: "Kişileriniz, doğum günleriniz, hatırlatmalarınız ve diğer ilgili uygulama verileriniz, platformunuzun sunduğu özelliklerle paylaşmayı veya dışa aktarmayı seçmediğiniz sürece cihazınızda kalır.",
     
     section3Title: "Anonim Analitikler",
     section3Icon: BarChart3,
@@ -484,11 +484,11 @@ const privacyTranslations = {
     
     section1Title: "Informatie die We Niet Verzamelen",
     section1Icon: Shield,
-    section1Content: "Als u de Wishio web-app niet gebruikt, slaan we geen persoonlijke informatie over u op. De mobiele app is ontworpen om lokaal op uw apparaat te werken, waardoor uw gegevens privé en veilig blijven.",
+    section1Content: "We slaan uw contacten, verjaardagen of persoonlijke gebeurtenisgegevens niet op onze servers op. Wishio is ontworpen om lokaal op uw apparaat te werken, zodat uw gegevens privé en veilig blijven.",
     
-    section2Title: "Informatie bij Gebruik van de Web-App",
+    section2Title: "Gegevens die op Uw Apparaat Worden Opgeslagen",
     section2Icon: Database,
-    section2Content: "Als u ervoor kiest om de Wishio web-app te gebruiken, worden de contacten die u deelt opgeslagen op onze servers om de webfunctionaliteit mogelijk te maken. Deze informatie wordt echter niet door ons gebruikt, verkocht of geopend voor enig ander doel dan het leveren van de door u gevraagde dienst.",
+    section2Content: "Uw contacten, verjaardagen, herinneringen en andere app-gerelateerde gegevens blijven op uw apparaat, tenzij u ervoor kiest deze te delen of te exporteren via functies van uw platform.",
     
     section3Title: "Anonieme Analyses",
     section3Icon: BarChart3,
@@ -520,11 +520,11 @@ const privacyTranslations = {
     
     section1Title: "Informacje, Których Nie Zbieramy",
     section1Icon: Shield,
-    section1Content: "Jeśli nie korzystasz z aplikacji webowej Wishio, nie przechowujemy żadnych informacji osobistych o Tobie. Aplikacja mobilna została zaprojektowana do pracy lokalnie na Twoim urządzeniu, zachowując prywatność i bezpieczeństwo Twoich danych.",
+    section1Content: "Nie przechowujemy na naszych serwerach Twoich kontaktów, urodzin ani osobistych danych o wydarzeniach. Wishio zostało zaprojektowane do pracy lokalnie na Twoim urządzeniu, zachowując prywatność i bezpieczeństwo Twoich danych.",
     
-    section2Title: "Informacje przy Korzystaniu z Aplikacji Webowej",
+    section2Title: "Dane Przechowywane na Twoim Urządzeniu",
     section2Icon: Database,
-    section2Content: "Jeśli zdecydujesz się korzystać z aplikacji webowej Wishio, udostępnione przez Ciebie kontakty są przechowywane na naszych serwerach w celu umożliwienia funkcjonalności web. Jednak te informacje nie są przez nas używane, sprzedawane ani udostępniane w żadnym innym celu niż świadczenie zamówionej przez Ciebie usługi.",
+    section2Content: "Twoje kontakty, urodziny, przypomnienia i inne dane związane z aplikacją pozostają na Twoim urządzeniu, chyba że zdecydujesz się je udostępnić lub wyeksportować za pomocą funkcji swojej platformy.",
     
     section3Title: "Anonimowa Analityka",
     section3Icon: BarChart3,
@@ -556,11 +556,11 @@ const privacyTranslations = {
     
     section1Title: "Informasi yang Tidak Kami Kumpulkan",
     section1Icon: Shield,
-    section1Content: "Jika Anda tidak menggunakan aplikasi web Wishio, kami tidak menyimpan informasi pribadi apa pun tentang Anda. Aplikasi seluler dirancang untuk bekerja secara lokal di perangkat Anda, menjaga data Anda tetap pribadi dan aman.",
+    section1Content: "Kami tidak menyimpan kontak, ulang tahun, atau data acara pribadi Anda di server kami. Wishio dirancang untuk bekerja secara lokal di perangkat Anda, menjaga data Anda tetap pribadi dan aman.",
     
-    section2Title: "Informasi Saat Menggunakan Aplikasi Web",
+    section2Title: "Data yang Disimpan di Perangkat Anda",
     section2Icon: Database,
-    section2Content: "Jika Anda memilih untuk menggunakan aplikasi web Wishio, kontak yang Anda bagikan disimpan di server kami untuk mengaktifkan fungsionalitas web. Namun, informasi ini tidak digunakan, dijual, atau diakses oleh kami untuk tujuan apa pun selain menyediakan layanan yang Anda minta.",
+    section2Content: "Kontak, ulang tahun, pengingat, dan data terkait aplikasi lainnya tetap berada di perangkat Anda, kecuali Anda memilih untuk membagikan atau mengekspornya menggunakan fitur yang disediakan oleh platform Anda.",
     
     section3Title: "Analitik Anonim",
     section3Icon: BarChart3,
