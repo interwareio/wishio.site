@@ -8,4 +8,8 @@ widget = image4; wishlists = image5.
 Celebration artwork: en_iPhone/exec-271e4b1c-6e64-44fa-bb8c-a62513a555f0.png
 Tablet artwork: en_iPad/image_01.png.
 Converted to WebP at a maximum 800px width (1100px for tablet), quality 85.
-Original files were not modified. English artwork is used for Celebration and iPad.
+Original files were not modified. English artwork is used for iPad. Celebration uses localized English/Spanish assets.
+
+Spanish Celebration: es/celebrate.webp. Localized with the built-in imagegen tool from the English Celebration artwork.
+Prompt brief: Translate all English text into Spanish while preserving the portrait layout, phone, purple/magenta palette, gifts, balloons, ribbons and typography hierarchy. Headline: "Organiza cada celebración". Subtitle: "Invitados, tareas, invitaciones y confirmaciones. Todo en un solo lugar." Localize all phone UI labels, preserving dates and venues.
+Final refinement prompt: Replace only "Dance party · 2026-08-15" with "Fiesta de baile · 2026-08-15" and "Dance party · 2029-03-16" with "Fiesta de baile · 2029-03-16". Preserve all other content and composition.

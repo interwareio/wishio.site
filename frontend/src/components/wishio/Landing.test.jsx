@@ -28,6 +28,11 @@ test('language selection updates content and artwork together', () => {
   expect(container.querySelector('.poster-front').getAttribute('src')).toContain('/es/');
   expect(document.documentElement.lang).toBe('es');
   expect(window.localStorage.getItem('wishio-language')).toBe('es');
+  act(() => container.querySelectorAll('[role="tab"]')[4].click());
+  expect(container.querySelector('[role="tabpanel"] img').getAttribute('src')).toBe('/screenshots/current/es/celebrate.webp');
+  expect(container.querySelector('.poster-gallery figure:last-child img').getAttribute('src')).toBe('/screenshots/current/es/celebrate.webp');
+  act(() => { select.value = 'en'; select.dispatchEvent(new Event('change', { bubbles: true })); });
+  expect(container.querySelector('[role="tabpanel"] img').getAttribute('src')).toBe('/screenshots/current/en/celebrate.webp');
 });
 test('mobile navigation closes on selection and store and legal links remain available', () => {
   const toggle = container.querySelector('.menu-toggle');
