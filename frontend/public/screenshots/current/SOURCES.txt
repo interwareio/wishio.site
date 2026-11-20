@@ -1,0 +1,11 @@
+Source: Wishio App Store Connect artwork supplied by the owner.
+Original directory: Documents/Interware/Wishio/AppStore Connect/
+
+English/Spanish iPhone artwork: en_iPhone/image{1,2,3,4,5}_fixed.png
+and es_iPhone/image{1,2,3,4,5}_es.png.
+reminders = image1; greetings = image2; gifts = image3;
+widget = image4; wishlists = image5.
+Celebration artwork: en_iPhone/exec-271e4b1c-6e64-44fa-bb8c-a62513a555f0.png
+Tablet artwork: en_iPad/image_01.png.
+Converted to WebP at a maximum 800px width (1100px for tablet), quality 85.
+Original files were not modified. English artwork is used for Celebration and iPad.

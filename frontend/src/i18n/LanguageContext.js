@@ -26,14 +26,18 @@ const getBrowserLanguage = () => {
 };
 
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState('en');
-  const [t, setT] = useState(translations.en);
+  const [language, setLanguage] = useState(() => {
+    try {
+      const saved = window.localStorage.getItem('wishio-language');
+      if (SUPPORTED_LANGUAGES.includes(saved)) return saved;
+    } catch { /* Browser storage can be unavailable. */ }
+    return getBrowserLanguage();
+  });
+  const t = translations[language] || translations.en;
 
   useEffect(() => {
-    const detectedLang = getBrowserLanguage();
-    setLanguage(detectedLang);
-    setT(translations[detectedLang] || translations.en);
-  }, []);
+    try { window.localStorage.setItem('wishio-language', language); } catch { /* Keep language switching usable without storage. */ }
+  }, [language]);
 
   const value = {
     language,
@@ -42,7 +46,6 @@ export const LanguageProvider = ({ children }) => {
     setLanguage: (lang) => {
       if (SUPPORTED_LANGUAGES.includes(lang)) {
         setLanguage(lang);
-        setT(translations[lang] || translations.en);
       }
     },
   };

@@ -2,30 +2,9 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./i18n/LanguageContext";
-import Navbar from "./components/wishio/Navbar";
-import Hero from "./components/wishio/Hero";
-import Features from "./components/wishio/Features";
-import Screenshots from "./components/wishio/Screenshots";
-import Download from "./components/wishio/Download";
-import Footer from "./components/wishio/Footer";
+import Landing from "./components/wishio/Landing";
 import PrivacyPolicy from "./components/wishio/PrivacyPolicy";
 import TermsAndConditions from "./components/wishio/TermsAndConditions";
-
-// Landing Page Component
-const LandingPage = () => {
-  return (
-    <>
-      <Navbar />
-      <main>
-        <Hero />
-        <Features />
-        <Screenshots />
-        <Download />
-      </main>
-      <Footer />
-    </>
-  );
-};
 
 function App() {
   return (
@@ -33,7 +12,7 @@ function App() {
       <div className="App font-sans antialiased">
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<LandingPage />} />
+            <Route path="/" element={<Landing />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           </Routes>
