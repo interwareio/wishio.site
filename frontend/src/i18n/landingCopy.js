@@ -27,7 +27,7 @@ export const landingCopy = {
     title: 'Recuerda la fecha.', highlight: 'Alégrales el día.',
     intro: 'Cumpleaños, regalos con intención, tarjetas con cariño y celebraciones. Reúne en Wishio esos pequeños detalles que significan tanto.',
     explore: 'Conoce tu compañera para celebrar', store: 'Descárgala en el', devices: 'iPhone, iPad y Mac', free: 'Descarga gratis · Compras dentro de la app', android: 'Android próximamente',
-    ribbon: ['Recuerda cada ocasión', 'Guarda el regalo ideal', 'Comparte un poco de alegría', 'Reúne a quienes quieres'],
+    ribbon: ['Recuerda cada ocasión', 'Guarda el regalo ideal', 'Haz que su día sea especial', 'Reúne a quienes quieres'],
     featureLabel: 'LOS PEQUEÑOS DETALLES CUENTAN', featureTitle: 'De «me acordé» a', featureHighlight: '«lo hice especial».', featureIntro: 'Un lugar para todo lo que pasa antes de soplar las velitas.',
     tabs: ['Recordatorios', 'Listas de deseos', 'Tarjetas', 'Regalos', 'Celebraciones'],
     panels: [
